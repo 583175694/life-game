@@ -1,6 +1,6 @@
 // GameEngine.js
 import stages from "../data/stage";
-import events from "../data/events";
+import eventsData from "../data/events";
 import options from "../data/options";
 
 class GameEngine {
@@ -16,7 +16,7 @@ class GameEngine {
       income: 0,
     };
     this.stages = stages;
-    this.events = events;
+    this.eventsData = eventsData;
     this.options = options; // 新增选项数据
     this.currentEvent = null;
     this.currentStageIndex = 0;
@@ -24,18 +24,35 @@ class GameEngine {
 
   // 新增方法，根据生活阶段生成事件和选项
   generateEventFromStage(stage) {
-    const randomEventIds = stage.map((res) => {
-      return res.event[Math.floor(Math.random() * res.event.length)];
-    });
+    const mustEventIds = stage.mustEvents;
+    const randomEventIds = this.getRandomEventIds(stage.randomEvents);
 
-    const events = randomEventIds.map((res) => {
-      return this.events[res].event;
-    });
+    const events = mustEventIds.map((eventId) => this.eventsData[eventId].event);
+    events.push(...randomEventIds.map((eventId) => this.eventsData[eventId].event));
 
     // 根据选项编号获取选项
     const eventOptions = options[this.currentStageIndex];
 
     return { events, options: eventOptions };
+  }
+
+  // 辅助方法，获取随机事件的ID
+  getRandomEventIds(randomEvents) {
+    const randomEventIndices = [];
+    const maxRandomEvents = 3; // 每个阶段渲染3个随机事件
+
+    while (randomEventIndices.length < maxRandomEvents) {
+      const randomIndex = Math.floor(Math.random() * randomEvents.length);
+      const eventId = randomEvents[randomIndex];
+      if (!randomEventIndices.includes(eventId)) {
+        randomEventIndices.push(eventId);
+      }
+    }
+
+    // 保存随机事件的索引，以便后续使用
+    this.randomEventsIndices = randomEventIndices;
+
+    return randomEventIndices;
   }
 
   // 更新 startGame 方法以使用新的方法生成事件
@@ -91,6 +108,9 @@ class GameEngine {
     // 检查是否需要进入下一个生活阶段
     if (this.currentStageIndex < Object.keys(this.stages).length - 1) {
       this.currentStageIndex++;
+    } else {
+      alert('游戏结束');
+      return null;
     }
 
     // 获取下一个事件
