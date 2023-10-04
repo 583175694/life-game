@@ -22,7 +22,7 @@ export default {
     methods: {
         handleOptionSelected(optionId) {
             this.currentEvent = this.gameEngine.handleOptionSelection(optionId);
-            this.playerAttributes = this.currentEvent.updateAttributes;
+            // this.playerAttributes = this.currentEvent.updateAttributes;
         },
         getPlayerAttributes() {
             return this.gameEngine.getPlayerAttributes();

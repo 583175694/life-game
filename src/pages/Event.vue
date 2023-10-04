@@ -19,6 +19,10 @@
                 <span>家境:</span>
                 <span>{{ playerAttributes.wealth }}</span>
             </div>
+            <div class="attribute">
+                <span>快乐:</span>
+                <span>{{ playerAttributes.happiness }}</span>
+            </div>
         </div>
         <div class="options">
             <button v-for="option in event.options" :key="option.id" @click="selectOption(option.id)">
@@ -42,4 +46,8 @@ export default {
     },
 };
 </script>
-  
+<style>
+p {
+    white-space: pre-wrap;
+}
+</style>
