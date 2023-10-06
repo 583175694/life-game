@@ -112,7 +112,7 @@ const options = {
     {
       id: 2,
       text: "阅读量大,喜欢看童话故事",
-      mustEvents: [20005, 20006],
+      mustEvents: [20003, 20004],
       randomEvents: [20007, 20008],
       effects: {
         intelligence: +1,
@@ -122,8 +122,8 @@ const options = {
     {
       id: 3,
       text: "成绩优异,老师经常表扬",
-      mustEvents: [20009, 20010],
-      randomEvents: [20011, 20012],
+      mustEvents: [20005, 20006],
+      randomEvents: [20001, 20002],
       effects: {
         intelligence: +2,
         happiness: +1,
@@ -132,8 +132,8 @@ const options = {
     {
       id: 4,
       text: "喜欢运动,经常参加球类活动",
-      mustEvents: [20013, 20014],
-      randomEvents: [20015, 20016],
+      mustEvents: [20007, 20008],
+      randomEvents: [20005, 20006],
       effects: {
         constitution: +1,
         happiness: +1,
@@ -142,8 +142,8 @@ const options = {
     {
       id: 5,
       text: "家长重视教育,报名参加补课",
-      mustEvents: [20017, 20018],
-      randomEvents: [20019, 20020],
+      mustEvents: [20009, 20010],
+      randomEvents: [20009, 20020],
       effects: {
         intelligence: +1,
         happiness: -1,
@@ -152,8 +152,8 @@ const options = {
     {
       id: 6,
       text: "容易交到朋友,有好几个玩伴",
-      mustEvents: [20021, 20022],
-      randomEvents: [20023, 20024],
+      mustEvents: [20001, 20002],
+      randomEvents: [20003, 20004],
       effects: {
         social: +2,
         happiness: +1,
@@ -162,8 +162,8 @@ const options = {
     {
       id: 7,
       text: "喜欢自己玩,不太主动交朋友",
-      mustEvents: [20025, 20026],
-      randomEvents: [20027, 20028],
+      mustEvents: [20005, 20006],
+      randomEvents: [20007, 20008],
       effects: {
         happiness: -1,
       },
@@ -171,8 +171,8 @@ const options = {
     {
       id: 8,
       text: "经常生病请假,体质较弱",
-      mustEvents: [20029, 20030],
-      randomEvents: [20031, 20032],
+      mustEvents: [20009, 20010],
+      randomEvents: [20001, 20002],
       effects: {
         constitution: -1,
         happiness: -1,
@@ -181,8 +181,8 @@ const options = {
     {
       id: 9,
       text: "喜欢role play游戏,发挥想象力",
-      mustEvents: [20033, 20034],
-      randomEvents: [20035, 20036],
+      mustEvents: [20003, 20004],
+      randomEvents: [20005, 20006],
       effects: {
         intelligence: +1,
         happiness: +1,
@@ -191,95 +191,14 @@ const options = {
     {
       id: 10,
       text: "喜欢捣蛋玩笑,给老师添麻烦",
-      mustEvents: [20037, 20038],
-      randomEvents: [20039, 20040],
+      mustEvents: [20007, 20008],
+      randomEvents: [20009, 20010],
       effects: {
         happiness: +1,
         social: +1,
       },
     },
   ],
-  10011: {
-    id: 10011,
-    event: "你学会自己拍手玩游戏,展现聪明天性。",
-    relatedEvents: [10012],
-    attributesRequired: {
-      intelligence: 6,
-    },
-  },
-  10012: {
-    id: 10012,
-    event: "你开始学着叫爸爸妈妈,家人听了非常开心。",
-    relatedEvents: [10013],
-    attributesRequired: {
-      intelligence: 6,
-    },
-  },
-
-  10013: {
-    id: 10013,
-    event: "你第一次尝试用勺子吃饭,吃得一嘴饭粒。",
-    relatedEvents: [10014],
-    attributesRequired: {
-      constitution: 5,
-    },
-  },
-  10014: {
-    id: 10014,
-    event: "你开始喜欢听音乐,经常转头找声音。",
-    relatedEvents: [10015],
-    attributesRequired: {
-      intelligence: 6,
-    },
-  },
-  10015: {
-    id: 10015,
-    event: "你学会坐起来,可以看见更多周围的环境。",
-    relatedEvents: [10016],
-    attributesRequired: {
-      constitution: 6,
-    },
-  },
-  10016: {
-    id: 10016,
-    event: "你第一次尝试拿书翻页,展现好奇心。",
-    relatedEvents: [10017],
-    attributesRequired: {
-      intelligence: 6,
-    },
-  },
-  10017: {
-    id: 10017,
-    event: "你开始喜欢玩过家家,展现模仿能力。",
-    relatedEvents: [10018],
-    attributesRequired: {
-      intelligence: 6,
-    },
-  },
-  10018: {
-    id: 10018,
-    event: "你第一次成功站起来行走几步,父母欣喜若狂。",
-    relatedEvents: [10019],
-    attributesRequired: {
-      constitution: 7,
-    },
-  },
-  10019: {
-    id: 10019,
-    event: "你学会简单词语,开始与人简单对话。",
-    relatedEvents: [10020],
-    attributesRequired: {
-      intelligence: 7,
-    },
-  },
-  10020: {
-    id: 10020,
-    event: "你开始学着自己用勺子吃东西,进食越来越独立。",
-    relatedEvents: [],
-    attributesRequired: {
-      constitution: 6,
-    },
-  },
   2: [
     {
       id: 5,

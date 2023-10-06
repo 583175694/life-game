@@ -41,7 +41,9 @@ class GameEngine {
     );
 
     // 根据选项编号获取选项
-    const eventOptions = this.optionsData[this.currentStageIndex];
+    // const eventOptions = this.optionsData[this.currentStageIndex];
+
+    const eventOptions = this.getCurrentStageOptions();
 
     return { events, options: eventOptions };
   }
@@ -64,9 +66,7 @@ class GameEngine {
     while (randomEventIndices.length < maxRandomEvents) {
       const randomIndex = Math.floor(Math.random() * randomEvents.length);
       const eventId = randomEvents[randomIndex];
-      if (
-        !randomEventIndices.includes(eventId)
-      ) {
+      if (!randomEventIndices.includes(eventId)) {
         randomEventIndices.push(eventId);
       }
     }
@@ -157,6 +157,12 @@ class GameEngine {
         );
       });
     });
+  }
+
+  // 获取当前阶段的选项
+  getCurrentStageOptions() {
+    const currentStageOptions = this.optionsData[this.currentStageIndex] || [];
+    return this.getRandomItemsFromArray(currentStageOptions, 3);
   }
 }
 
